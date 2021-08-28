@@ -1,21 +1,17 @@
-package atm
+package dao
 
 import "fmt"
 
 var (
 	ErrNotFound        = fmt.Errorf("ErrNotFound")
 	ErrInvalidArgument = fmt.Errorf("ErrInvalidArgument")
+	ErrInvalidPin      = fmt.Errorf("ErrInvalidPin")
 )
 
-type AtmDao interface {
-	GetPinNumber(cardNumber string) (string, error)
-}
-
-type CardDao interface {
+type Dao interface {
+	CheckCardNumber(cardNumber string) error
+	CheckPinNumber(cardNumber, pin string) error
 	GetAccounts(cardNumber string) ([]string, error)
-}
-
-type AccountDao interface {
 	GetBalance(account string) (int, error)
-	SetBalance(account string, balance int)
+	SetBalance(account string, balance int) error
 }
