@@ -7,5 +7,5 @@ var (
 	ErrInvalidPin        = fmt.Errorf("ErrInvalidPin")
 	ErrNotEnoughMoney    = fmt.Errorf("ErrNotEnoughMoney")
 	ErrAccountNotFound   = fmt.Errorf("ErrAccountNotFound")
-	ErrMinusMoney        = fmt.Errorf("ErrMinusMoney")
+	ErrInvalidMoneyInput = fmt.Errorf("ErrInvalidMoneyInput")
 )

@@ -23,8 +23,8 @@ func (account *Account) GetBalance() (int, error) {
 }
 
 func (account *Account) Withdraw(money int) error {
-	if money < 0 {
-		return ErrMinusMoney
+	if money <= 0 {
+		return ErrInvalidMoneyInput
 	}
 
 	balance, err := account.GetBalance()
@@ -47,8 +47,8 @@ func (account *Account) Withdraw(money int) error {
 }
 
 func (account *Account) Deposit(money int) error {
-	if money < 0 {
-		return ErrMinusMoney
+	if money <= 0 {
+		return ErrInvalidMoneyInput
 	}
 
 	balance, err := account.GetBalance()
